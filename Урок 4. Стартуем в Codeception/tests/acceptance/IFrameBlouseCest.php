@@ -1,17 +1,17 @@
 <?php
 
-$BlouseMainPageTextCSS ='' ;
-$BlouseMainPageTextXPath ='';
-$BlouseMainPageContainerCSS ='';
-$BlouseMainPageContainerXPath ='';
-$BlouseClickableElementCSS = '';
-$BlouseClickableElementXPath = '';
-$IFrameCSS = '';
-$IFrameXPath = '';
-$IFrameImageCarouselCSS = '';
-$IFrameImageCarouselXPath = '';
-$IFrameAddToCartButtonCSS = '';
-$IFrameAddToCartButtonXPath = '';
+$BlouseMainPageTextCSS ='#homefeatured h5 [title="Blouse"]' ;
+$BlouseMainPageTextXPath ='//*[@id="homefeatured"]//h5[2]//a[@title="Blouse"]';
+$BlouseMainPageContainerCSS ='#homefeatured > li:nth-child(2) > div';
+$BlouseMainPageContainerXPath ='//*[@id="homefeatured"]/li[2]/div';
+$BlouseClickableElementCSS = '#homefeatured li:nth-child(2) a.quick-view span';
+$BlouseClickableElementXPath = '//*[@id="homefeatured"]/li[2]//a[@class="quick-view"]/span';
+$IFrameCSS = 'iframe.fancybox-iframe';
+$IFrameXPath = '//iframe[@class="fancybox-iframe"]';
+$IFrameImageCarouselCSS = 'iframe.img-responsive';
+$IFrameImageCarouselXPath = '//iframe[@class="img-responsive"]';
+$IFrameAddToCartButtonCSS = 'iframe.exclusive';
+$IFrameAddToCartButtonXPath = '//iframe[@class="exclusive"]';
 
 
 class IFrameBlouseCest
