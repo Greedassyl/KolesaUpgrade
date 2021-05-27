@@ -1,5 +1,12 @@
 <?php
 
+$SearchFieldOnTopCSS = '#search_query_top';
+$SearchFieldOnTopXPath = '//*[@id="search_query_top"]';
+$SearchButtonOnTopCSS = '[name="submit_search"]';
+$SearchButtonOnTopXPath = '//*[@type="submit"][@name="submit_search"]';
+$SearchPageProductContainersCSS = '.row .product-container';
+$SearchPageProductContainerXPath = '//*[@class="product-container"]';
+
 class FiveDressCest
 {
 

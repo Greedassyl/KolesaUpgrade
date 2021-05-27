@@ -1,5 +1,17 @@
 <?php
 
+$BlouseMainPageTextCSS ='' ;
+$BlouseMainPageTextXPath ='';
+$BlouseMainPageContainerCSS ='';
+$BlouseMainPageContainerXPath ='';
+$BlouseClickableElementCSS = '';
+$BlouseClickableElementXPath = '';
+$IFrameCSS = '';
+$IFrameXPath = '';
+$IFrameImageCarouselCSS = '';
+$IFrameImageCarouselXPath = '';
+$IFrameAddToCartButtonCSS = '';
+$IFrameAddToCartButtonXPath = '';
 
 
 class IFrameBlouseCest
