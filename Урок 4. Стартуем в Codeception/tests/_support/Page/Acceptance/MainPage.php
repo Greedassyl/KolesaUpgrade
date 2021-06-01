@@ -7,10 +7,15 @@ class MainPage
     public static $URL = '';
 
     /**
-     * Declare UI map for this page here. CSS or XPath allowed.
-     * public static $usernameField = '#username';
-     * public static $formSubmitButton = "#mainForm input[type=submit]";
+     * селектор сектора платьев в navbar
      */
+    public static $dressesNavBar = '//*[@id="block_top_menu"]/ul/li[2]/a[@title="Dresses"]';
+
+    /**
+     * селектор категории летних платьев
+     */
+    public static $summerDresses = '//*[@id="block_top_menu"]/ul/li[2]//a[@title="Summer Dresses"]';
+    
 
     /**
      * Basic route example for your current URL
