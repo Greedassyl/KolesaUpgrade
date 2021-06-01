@@ -8,10 +8,15 @@ actor: AcceptanceTester
 modules:
     enabled:
         - WebDriver:
-            url: http://automationpractice.com/index.php
+            url: https://www.saucedemo.com/
             host: localhost
             port: 9515
             browser: chrome
             window_size: maximize
+            request_timeout: 120
+            connection_timeout: 120
+            capabilities:
+                chromeOptions:
+                    w3c: false
         - \Helper\Acceptance
 step_decorators: ~        
