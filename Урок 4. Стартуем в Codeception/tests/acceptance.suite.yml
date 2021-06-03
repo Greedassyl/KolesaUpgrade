@@ -8,7 +8,7 @@ actor: AcceptanceTester
 modules:
     enabled:
         - WebDriver:
-            url: http://automationpractice.com/index.php
+            url: https://prostochizh.github.io/form/
             host: localhost
             port: 9515
             browser: chrome
@@ -19,4 +19,5 @@ modules:
                 chromeOptions:
                     w3c: false
         - \Helper\Acceptance
+        - \Helper\BaseHelper
 step_decorators: ~        
