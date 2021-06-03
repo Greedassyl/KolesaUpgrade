@@ -22,7 +22,6 @@ class FillFieldsCest
     public function checkFillFormFields(AcceptanceTester $I)
     {
         $faker = Factory::create('kk_KZ');
-        $faker->addProvider(new CustomFakerProvider($faker));
 
         $name = $faker->firstName;
         $lastName = $faker->lastName;
@@ -32,8 +31,8 @@ class FillFieldsCest
         $city = $faker->city;
         $state = $faker->region;
         $postal = $faker->postcode;
-        $paymentCard = $faker->getCreditCard();
-        $cardCCV = $faker->getCCV();
+        $paymentCard = $I->getFaker()->getCreditCard();
+        $cardCCV = $I->getFaker()->getCCV();
 
         $I->amOnPage(Fill::$URL);
         $I->fillField(Fill::$firstName, $name);
@@ -47,8 +46,7 @@ class FillFieldsCest
         $I->click(Fill::$paymentCardRadio);
         $I->fillField(Fill::$paymentCardField, $paymentCard);
         $I->fillField(Fill::$cardCCV, $cardCCV);
-        $I->wait(20);
         $I->click(Fill::$registerButton);
-        $I->see('Good Job');
+        $I->waitForText('Good job');
     }
 }
