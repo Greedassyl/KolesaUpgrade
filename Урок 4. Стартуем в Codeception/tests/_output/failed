@@ -1,0 +1,2 @@
+tests\acceptance\SelectRandomCategoryCest.php:SelectThanAssertRandomCategory
+tests\acceptance\SelectRandomCategoryCest.php:getRandomCategory

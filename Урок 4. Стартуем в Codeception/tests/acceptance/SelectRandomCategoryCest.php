@@ -14,27 +14,25 @@ class SelectRandomCategoryCest
     /**
      * тест рандомно выбирает категорию и подтверждает это через урл
      * @param Example $data
-     * @dataProvider getDataForCategorySelect
+     * @dataProvider Habr::randkeys
      * @group random
      */
-    public function SelectThanAssertRandomCategory(AcceptanceTester $I, Example $data)
+    public function SelectThanAssertRandomCategory(AcceptanceTester $I,Example $data)
     {
         $I->amOnPage(Habr::$URL);
-        $I->waitForElementClickable(Habr::$topMenuCategorySelect, $data['menuPoint']);
-        $I->click(sprintf(Habr::$topMenuCategorySelect, $data['menuPoint']));
-        $I->seeInCurrentUrl($data['name']);
+        $I->waitForElementClickable(sprintf(Habr::$randKeys[0], $data['menuPoint']));
+        $I->click(sprintf(Habr::$randKeys[0], $data['menuPoint']));
+        $I->seeInCurrentUrl(sprintf(Habr::$randKeys[0], $data['name']));
     }
 
-    protected function getDataForCategorySelect()
+
+    
+
+    public function getRandomCategory()
     {
-        return [
-            ['menuPoint' => 'https://habr.com/ru/top/', 'name' => 'top'],
-            ['menuPoint' => 'https://habr.com/ru/flows/develop/', 'name' => 'develop'],
-            ['menuPoint' => 'https://habr.com/ru/flows/admin/', 'name' => 'admin'],
-            ['menuPoint' => 'https://habr.com/ru/flows/design/', 'name' => 'design'],
-            ['menuPoint' => 'https://habr.com/ru/flows/management/', 'name' => 'management'],
-            ['menuPoint' => 'https://habr.com/ru/flows/marketing/', 'name' => 'marketing'],
-            ['menuPoint' => 'https://habr.com/ru/flows/popsci/', 'name' => 'popsci']
-        ];
+        return sprintf(
+            '%s',
+            $this->getDataForCategorySelect[array_rand($this->getDataForCategorySelect)]
+        );
     }
 }
