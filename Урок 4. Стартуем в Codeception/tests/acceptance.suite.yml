@@ -8,7 +8,7 @@ actor: AcceptanceTester
 modules:
     enabled:
         - WebDriver:
-            url: https://habr.com/
+            url: http://automationpractice.com/
             host: localhost
             port: 9515
             browser: chrome
@@ -20,4 +20,5 @@ modules:
                     w3c: false
         - \Helper\Acceptance
         - \Helper\BaseHelper
+        - Asserts
 step_decorators: ~        
