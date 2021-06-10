@@ -76,8 +76,26 @@ class UsersCest
      */
     public function checkUserDelete(FunctionalTester $I)
     {
+        $userData = [
+            'email' => $I->getFaker()->email,
+            'owner' => 'AssylbekAbdrakhmanov',
+            'job'   => 'qa',
+            'name'  => $I->getFaker()->name
+        ];
+
         $I->haveHttpHeader('Content-Type', 'application/json');
-        $I->sendDelete('human');
+        $I->sendPost('human', $userData);
+        $I->seeResponseCodeIsSuccessful();
+        $I->seeResponseContainsJson(['status' => 'ok']);
+        $_id = $I->grabDataFromResponseByJsonPath('$.._id');
+        $url = 'human?_id=' . $_id[0];
+        $I->sendDelete($url);
+        $I->seeResponseCodeIsSuccessful();
+        $I->seeResponseContainsJson(['deletedCount' => 1]);
+        $I->seeResponseContainsJson(['ok' => 1]);
+        $I->sendGet('people', ['owner' =>'AssylbekAbdrakhmanov']);
+        $I->seeResponseCodeIsSuccessful();
+        $I->dontSeeResponseContains($_id[0]);
     }
 
     /**
@@ -88,12 +106,12 @@ class UsersCest
      */
     public function checkUserCreateNegative(FunctionalTester $I, Example $data)
     {
-        $email = $I->getFaker()->email;
-        $owner = 'AssylbekAbdrakhmanov';
+        $email =  $I->getFaker()->email;
+        $owner =  'AssylbekAbdrakhmanov';
         $I->haveHttpHeader('Content-Type', 'application/json');
         $I->sendPost('human', [
-            $data['email'] ? $email : null,
-            $data['owner'] ? $owner : null,
+            'email' => $data['email'] ? $email : null,
+            'owner' => $data['owner'] ? $owner : null,
             ]);
         $I->seeResponseContains($data['messageText']);
         $I->seeResponseContainsJson($data['status']);
@@ -108,7 +126,7 @@ class UsersCest
             [
                 'email' => true,
                 'owner' => false,
-                'messageText' => 'email не передан',
+                'messageText' => 'Что-то пошло не так, проверьте поля: email, name, owner. p.s. учимся на своих ошибках',
                 'status' => ['status' => false]
             ],
             [
