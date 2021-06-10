@@ -20,9 +20,9 @@ class SelectRandomCategoryCest
     public function SelectThanAssertRandomCategory(AcceptanceTester $I,Example $data)
     {
         $I->amOnPage(Habr::$URL);
-        $I->waitForElementClickable(Habr::$randKeys[0], $data['menuPoint']);
-        $I->click(sprintf(Habr::$randKeys[0], $data['menuPoint']));
-        $I->seeInCurrentUrl(Habr::$randKeys[0], $data['name']);
+       // $I->waitForElementClickable(Habr::$randKeys[0], $data['menuPoint']);
+       // $I->click(sprintf(Habr::$randKeys[0], $data['menuPoint']));
+       // $I->seeInCurrentUrl(Habr::$randKeys[0], $data['name']);
     }
 
 

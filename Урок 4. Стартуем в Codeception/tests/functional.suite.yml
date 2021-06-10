@@ -11,5 +11,16 @@ modules:
         - PhpBrowser:
             url: http://automationpractice.com/index.php
         - \Helper\Functional
+        - \Helper\BaseHelper
         - Asserts
+        - REST:
+            depends: PhpBrowser
+            url: 'http://api.izze.xyz/test/'
+    
+    config:
+        PhpBrowser:
+            url: 'http://api.izze.xyz/test/'
+            headers:
+                Content-Type: application/json
+
     step_decorators: ~        
