@@ -7,8 +7,12 @@
 actor: AcceptanceTester
 modules:
     enabled:
+        - MongoDb:
+            dsn: 'mongodb://46.101.235.30/upgradeApp'
+            populate: false
+            cleanup: false
         - WebDriver:
-            url: http://automationpractice.com/
+            url: http://izze.xyz/
             host: localhost
             port: 9515
             browser: chrome

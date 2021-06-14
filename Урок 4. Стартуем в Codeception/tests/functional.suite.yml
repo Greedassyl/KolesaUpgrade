@@ -8,8 +8,12 @@
 actor: FunctionalTester
 modules:
     enabled:
+        - MongoDb:
+            dsn: 'mongodb://46.101.235.30/upgradeApp'
+            populate: false
+            cleanup: false
         - PhpBrowser:
-            url: http://automationpractice.com/index.php
+            url: http://api.izze.xyz/test/
         - \Helper\Functional
         - \Helper\BaseHelper
         - Asserts

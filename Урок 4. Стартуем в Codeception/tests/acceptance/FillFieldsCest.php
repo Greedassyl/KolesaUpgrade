@@ -1,12 +1,8 @@
 <?php
 
-use Codeception\Example;
+
 use Faker\Factory;
-use Helper\CustomFakerProvider;
-use Page\Acceptance\Habr;
 use Page\Acceptance\Fill;
-use Page\Acceptance\MainPage;
-use Page\Acceptance\SearchPage;
 
 /**
  * Класс для заполнения полей

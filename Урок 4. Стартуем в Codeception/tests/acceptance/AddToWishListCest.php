@@ -1,7 +1,6 @@
 <?php
 
-use Page\Acceptance\MainPage;
-use Page\Acceptance\SearchPage;
+
 use Page\Acceptance\WishList;
 use Page\Acceptance\MyCabinet;
 
