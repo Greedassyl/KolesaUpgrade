@@ -16,7 +16,7 @@ jobs:
       - name: Run chromedriver
         run: nohup $CHROMEWEBDRIVER/chromedriver --url-base=/wd/hub /dev/null 2>&1 &
       - name: Run tests
-        run: php ./vendor/bin/codecept run --steps -vvv
+        run: php lesson11/vendor/bin/codecept run --steps -vvv
       - name:
         uses: mikepenz/action-junit-report@v2.4.2
         with:
