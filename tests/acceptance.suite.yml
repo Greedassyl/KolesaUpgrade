@@ -22,6 +22,7 @@ modules:
             capabilities:
                 chromeOptions:
                     w3c: false
+                    args: [ "--headless", "--disable-gpu" ]
         - \Helper\Acceptance
         - \Helper\BaseHelper
         - Asserts
