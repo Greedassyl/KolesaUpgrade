@@ -12,7 +12,7 @@ modules:
             populate: false
             cleanup: false
         - WebDriver:
-            url: http://izze.xyz/
+            url: http://automationpractice.com/
             host: localhost
             port: 9515
             browser: chrome
