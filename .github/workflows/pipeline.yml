@@ -21,7 +21,7 @@ jobs:
   #      run: php vendor/bin/codecept build
       - name: Run tests
         run: php vendor/bin/codecept run acceptance --steps --xml
-      - name: Run reports
+      - name: JUnit Report Action
         if: always()
         uses: mikepenz/action-junit-report@v2.4.2
         with:
