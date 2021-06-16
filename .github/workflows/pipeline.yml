@@ -6,11 +6,11 @@ jobs:
     runs-on: ubuntu-latest
     steps: 
       - uses: actions/checkout@v2
+      - name: Change directory
+        run: cd 'Урок 4. Стартуем в Codeception'
       - uses: nanasess/setup-php@master
         with:
           php-version: '7.4'
-      - name: Change directory
-        run: cd 'Урок 4. Стартуем в Codeception'
       - name: Install Dependencies
         run: composer install
       - name: Install Faker
