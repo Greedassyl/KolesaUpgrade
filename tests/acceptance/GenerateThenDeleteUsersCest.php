@@ -28,7 +28,7 @@ class GenerateThenDeleteUsersCest
             "avatar" => $faker->imageUrl(),
             "canBeKilledBySnap" => $faker->boolean(),
             "created_at" => $faker->date("Y-m-d"),
-            "owner" => "assylbekabdra",
+            "owner" => "assylbekabdrak",
         ];
         
         if($data[$i]['canBeKilledBySnap']) {
