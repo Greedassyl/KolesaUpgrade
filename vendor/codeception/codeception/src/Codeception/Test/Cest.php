@@ -45,7 +45,7 @@ class Cest extends Test implements
         $code = $this->getSourceCode();
         $this->parser->parseFeature($code);
         $this->getMetadata()->setParamsFromAnnotations(Annotation::forMethod($this->testClassInstance, $this->testMethod)->raw());
-        $this->getMetadata()->getService()->injectDependencies($this->testClassInstance);
+        $this->getMetadata()->getService('')->injectDependencies($this->testClassInstance);
 
         // add example params to feature
         if ($this->getMetadata()->getCurrent('example')) {
