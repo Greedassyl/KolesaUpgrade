@@ -6,8 +6,8 @@ jobs:
     runs-on: ubuntu-latest
     steps: 
       - uses: actions/checkout@v2
-      - name: Change directory
-        run: cd 'Урок 4. Стартуем в Codeception'
+#      - name: Change directory
+#        run: cd 'Урок 4. Стартуем в Codeception'
       - uses: nanasess/setup-php@master
         with:
           php-version: '7.4'
@@ -20,7 +20,7 @@ jobs:
  #     - name: Run build
   #      run: php vendor/bin/codecept build
       - name: Run tests
-        run: php vendor/bin/codecept run functional --steps --xml
+        run: php 'Урок 4. Стартуем в Codeception'/vendor/bin/codecept run functional --steps --xml
       - name:
         uses: mikepenz/action-junit-report@v2.4.2
         with:
