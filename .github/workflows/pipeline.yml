@@ -20,7 +20,7 @@ jobs:
  #     - name: Run build
   #      run: php vendor/bin/codecept build
       - name: Run tests
-        run: php 'Урок 4. Стартуем в Codeception'/vendor/bin/codecept run functional --steps --xml
+        run: php vendor/bin/codecept run functional --steps --xml
       - name:
         uses: mikepenz/action-junit-report@v2.4.2
         with:
