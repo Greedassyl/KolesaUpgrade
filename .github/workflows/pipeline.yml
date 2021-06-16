@@ -20,7 +20,7 @@ jobs:
  #     - name: Run build
   #      run: php vendor/bin/codecept build
       - name: Run tests
-        run: php vendor/bin/codecept run --steps --xml
+        run: php vendor/bin/codecept run acceptance FillFieldsCest --steps --xml
       - name: JUnit Report Action
         if: always()
         uses: mikepenz/action-junit-report@v2.4.2
