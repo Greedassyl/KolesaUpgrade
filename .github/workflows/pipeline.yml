@@ -9,10 +9,14 @@ jobs:
       - uses: nanasess/setup-php@master
         with:
           php-version: '7.4'
+      - name: Change directory
+        run: cd 'Урок 4. Стартуем в Codeception'
       - name: Install Dependencies
         run: composer install
       - name: Install Faker
         run: composer require fzaninotto/faker
+      - name: Change directory
+        run: cd ..
       - name: Run chromedriver
         run: nohup $CHROMEWEBDRIVER/chromedriver --url-base=/wd/hub /dev/null 2>&1 &
       - name: Change directory
