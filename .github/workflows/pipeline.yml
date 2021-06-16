@@ -17,6 +17,8 @@ jobs:
         run: nohup $CHROMEWEBDRIVER/chromedriver --url-base=/wd/hub /dev/null 2>&1 &
       - name: Change directory
         run: cd 'Урок 4. Стартуем в Codeception'
+      - name: Run build
+        run: php vendor/bin/codecept build
       - name: Run tests
         run: php vendor/bin/codecept run functional --steps --xml
       - name:
